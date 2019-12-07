@@ -1,0 +1,29 @@
+version: '3'
+services:
+  default: &default
+    build:
+      context: ./docker
+    container_name: tsumikata
+    environment:
+      - TZ=Asia/Tokyo
+      - AWS_PROFILE=yamap-kawahara.yohei
+      - AWS_DEFAULT_REGION=ap-northeast-1
+    volumes:
+      - .:/work
+      - $HOME/.aws:/root/.aws:ro
+    working_dir: /work
+  help:
+    <<: *default
+    entrypoint: ruby tsumikata.rb
+  list:
+    <<: *default
+    entrypoint: ruby tsumikata.rb list
+  change:
+    <<: *default
+    entrypoint: ruby tsumikata.rb change
+  up:
+    <<: *default
+    entrypoint: ruby tsumikata.rb up
+  down:
+    <<: *default
+    entrypoint: ruby tsumikata.rb down
