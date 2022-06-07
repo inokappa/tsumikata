@@ -18,7 +18,7 @@ GEM
       aws-eventstream (~> 1.0, >= 1.0.2)
     highline (2.0.3)
     jimuguri (0.1.1)
-    jmespath (1.4.0)
+    jmespath (1.6.1)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.6.0)
